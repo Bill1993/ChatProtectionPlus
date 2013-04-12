@@ -51,6 +51,7 @@ public class ChatListener implements Listener
 			
 			if(timeDif < Config.MILIS_BETWEEN_MESSAGES_ALLOWED) 
 			{
+				user.giveChatInfraction(1);
 				if(Config.NOTIFY_USER) 
 				{
 					event.getPlayer().sendMessage(messageHandler.getFormatedMessage("user.spam.chat", true, user.getChatInfactions(), Config.MAX_ALLOWED_CHATSPAM_INFRACTION));
@@ -61,8 +62,8 @@ public class ChatListener implements Listener
 					}
 				}
 				
-				if(user.getChatInfactions() >= Config.MAX_ALLOWED_CHATSPAM_INFRACTION) 
-				{				
+				if(user.getChatInfactions() > Config.MAX_ALLOWED_CHATSPAM_INFRACTION) 
+				{
 					if(Config.BAN_FOR_CHAT_SPAMING) 
 					{
 						Bukkit.broadcastMessage(messageHandler.getFormatedMessage("spam.ban.chat", true, player.getDisplayName()));
@@ -77,7 +78,6 @@ public class ChatListener implements Listener
 						return;
 					}
 				}
-				user.giveChatInfraction(1);
 				event.setCancelled(true);
 				return;
 			} 

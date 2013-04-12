@@ -42,6 +42,7 @@ public class CommandListener implements Listener
 			Long timeDif = currTime - user.getPrevCommandTime();
 			if(timeDif < Config.MILIS_BETWEEN_MESSAGES_ALLOWED) 
 			{
+				user.giveChatInfraction(1);
 				if(Config.NOTIFY_USER) 
 				{
 					event.getPlayer().sendMessage(messageHandler.getFormatedMessage("user.spam.command", true, user.getCommandInfactions(), Config.MAX_ALLOWED_COMMANDSPAM_INFRACTION));
@@ -50,7 +51,7 @@ public class CommandListener implements Listener
 						CustomFunction.NotifyAdministrators(messageHandler.getFormatedMessage("admin.spam.command", true, player.getDisplayName(), timeDif));
 					}
 				}
-				if(user.getCommandInfactions() >= Config.MAX_ALLOWED_COMMANDSPAM_INFRACTION) 
+				if(user.getCommandInfactions() >= Config.MAX_ALLOWED_COMMANDSPAM_INFRACTION + 1) 
 				{
 					if(Config.BAN_FOR_COMMAND_SPAMING) 
 					{
@@ -66,7 +67,6 @@ public class CommandListener implements Listener
 						return;
 					}
 				}
-				user.giveChatInfraction(1);
 				event.setCancelled(true);
 				return;
 			} 
