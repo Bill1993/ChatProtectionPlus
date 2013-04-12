@@ -34,7 +34,7 @@ public class ChatProtectionPlus extends JavaPlugin
 	{
 		plugin = this;
 		Config.loadConfig(this);
-		messageHandler = new MessageHandler();
+		messageHandler = new MessageHandler(this);
 		
 		joinleavelistener = new JoinLeaveListener(this);
 		chatlistener = new ChatListener(this);
@@ -65,11 +65,6 @@ public class ChatProtectionPlus extends JavaPlugin
 	public void onDisable()  
 	{
 		log.info("[ChatProtection+] is now Un-Loaded!");
-	}
-	
-	public void onReload() 
-	{
-		
 	}
 	
 	public static boolean setupPermissions()
