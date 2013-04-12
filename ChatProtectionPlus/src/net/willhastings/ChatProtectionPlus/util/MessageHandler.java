@@ -1,10 +1,8 @@
 package net.willhastings.ChatProtectionPlus.util;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.text.MessageFormat;
 import java.util.HashMap;
 
@@ -27,21 +25,19 @@ public class MessageHandler
 			plugin = ChatProtectionPlus.getPlugin();
 			
 			FILE_PATH = plugin.getDataFolder().getPath();
-			FILE_NAME = File.separator + "messages.properties";
+			FILE_NAME = "messages.properties";
 			
 			if(!new File(FILE_PATH).exists())
 			{
 				new File(FILE_PATH).mkdir();
 			}
 			
-			if(!new File(FILE_PATH + FILE_NAME).exists())
+			if(!new File(FILE_PATH + File.separator + FILE_NAME).exists())
 			{
-				BufferedWriter out = new BufferedWriter(new FileWriter(FILE_PATH + FILE_NAME));
-				out.write("");
-				out.close();
+				plugin.saveResource(FILE_NAME, true);
 			}
 			
-			BufferedReader in = new BufferedReader(new FileReader(FILE_PATH + FILE_NAME));
+			BufferedReader in = new BufferedReader(new FileReader(FILE_PATH + File.separator + FILE_NAME));
 			String line;
 			while((line = in.readLine()) != null)
 			{
