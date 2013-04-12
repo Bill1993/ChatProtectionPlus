@@ -48,7 +48,7 @@ public class MessageHandler
 		{
 			temp = "Missing message <" + key + "> in messages.properties!";
 		}
-		if(prefix) temp = this.getMessage("server.preffix", false) + " " + temp;
+		if(prefix) temp = this.getMessage("server.prefix", false) + " " + temp;
 		return temp;
 	}
 	
@@ -70,7 +70,7 @@ public class MessageHandler
 			temp = "Missing message <" + key + "> in messages.properties!";
 			prefix = true;
 		}
-		if(prefix) temp = this.getMessage("server.preffix", false) + " " + temp;
+		if(prefix) temp = this.getMessage("server.prefix", false) + " " + temp;
 		return temp;
 	}
 	
