@@ -1,0 +1,15 @@
+name: ChatProtectionPlus
+main: net.willhastings.ChatProtectionPlus.ChatProtectionPlus
+version: 1.0.1
+softdepend: [Vault]
+author: bill1993
+
+commands:
+  cpp:
+    description: ChatProtection+ Command, and Sub Commands
+    
+permissions:
+  cpp.admin:
+    description: Makes user a ChatProtection+ Administrator
+  cpp.ignore:
+    description: Will make ChatProtection+ ignore the user

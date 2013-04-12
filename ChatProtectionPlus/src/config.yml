@@ -1,0 +1,59 @@
+#
+#|-----------------------------------------------------------|
+#|-------------------Main plugin options---------------------|
+#|-----------------------------------------------------------|
+#
+# NotifyUser - This will notify the user when they trigger a flag in the plugin.
+# NotifyAdmin - Will notify administrators when a user triggers a flag in the plugin.
+#
+Options:
+  NotifyUser: true
+  NotifyAdmin: true
+#
+#|-----------------------------------------------------------|
+#|-------------Toggle Features on and off.-------------------|
+#|-----------------------------------------------------------|
+#
+# AntiCaps - Turn the Anti Capital letters in chat feature off.
+# AntiChatSpam - Turn the Anti Chat Spam on and off.
+# AntiCommandSpam - Turn the Anti Command Spam on and off.
+#
+Toggle:
+  AntiCaps: true
+  AntiChatSpam: true
+  AntiCommandSpam: true
+#
+#|-----------------------------------------------------------|
+#|-------Configuration are for the anti-caps system.---------|
+#|-----------------------------------------------------------|
+#
+# AllowedCapitalsPercent - This is the maximum percentage of capital letters allowed in a message.
+#
+AntiCaps:
+  AllowedCapitalsPercent: 50
+#
+#|-----------------------------------------------------------|
+#|---------Configuration are for the anti-chat spam.---------|
+#|-----------------------------------------------------------|
+#
+# BanForSpam - Will ban the user for spamming chat. if false, it will kick the user.
+# MillisecondsAllowedBetweenMessages - This is the maximum amount of miliseconds allowed between users messages.
+# AllowedSpamInfractions - The amount of infractions a user is allowed to have before kicked/banned for spamming chat.
+#
+AntiChatSpam:
+  BanForSpam: false
+  MillisecondsAllowedBetweenMessages: 450
+  AllowedSpamInfractions: 3
+#
+#|-----------------------------------------------------------|
+#|---------Configuration are for the anti-chat spam.---------|
+#|-----------------------------------------------------------|
+#
+# BanForSpam - Will ban the user for spamming commands. if false, it will kick the user.
+# MillisecondsAllowedBetweenCommands - This is the maximum amount of miliseconds allowed between user commands.
+# AllowedSpamInfractions - The amount of infractions a user is allowed to have before they are kicked/banned for spamming commands.
+#
+AntiCommandSpam:
+  BanForSpam: false
+  MillisecondsAllowedBetweenCommands: 450
+  AllowedSpamInfractions: 3
