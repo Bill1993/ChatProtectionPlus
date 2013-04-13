@@ -1,7 +1,7 @@
 package net.willhastings.ChatProtectionPlus.Listeners;
 
+import net.willhastings.ChatProtectionPlus.CPPFunction;
 import net.willhastings.ChatProtectionPlus.ChatProtectionPlus;
-import net.willhastings.ChatProtectionPlus.CustomFunction;
 import net.willhastings.ChatProtectionPlus.util.Config;
 import net.willhastings.ChatProtectionPlus.util.MessageHandler;
 import net.willhastings.ChatProtectionPlus.util.User;
@@ -30,11 +30,11 @@ public class CommandListener implements Listener
 		if(event.isCancelled()) return;
 		
 		if(!Config.USE_ANTICAPS && !Config.USE_ANTICHAT_SPAM) return;
-		else if(CustomFunction.hasPermission(player, "cpp.ignore.commandspam") || CustomFunction.hasPermission(player, "cpp.ignore.*")) return;
+		else if(CPPFunction.hasPermission(player, "cpp.ignore.commandspam") || CPPFunction.hasPermission(player, "cpp.ignore.*")) return;
 		
 		if(!player.isOnline()) return;
 		
-		User user = CustomFunction.getUser(player);
+		User user = CPPFunction.getUser(player);
 		
 		if(Config.USE_ANTICOMMAND_SPAM) 
 		{
@@ -48,7 +48,7 @@ public class CommandListener implements Listener
 					event.getPlayer().sendMessage(messageHandler.getFormatedMessage("user.spam.command", true, user.getCommandInfactions(), Config.MAX_ALLOWED_COMMANDSPAM_INFRACTION));
 					if(Config.NOTIFY_ADMIN) 
 					{
-						CustomFunction.NotifyAdministrators(messageHandler.getFormatedMessage("admin.spam.command", true, player.getDisplayName(), timeDif));
+						CPPFunction.NotifyAdministrators(messageHandler.getFormatedMessage("admin.spam.command", true, player.getDisplayName(), timeDif));
 					}
 				}
 				if(user.getCommandInfactions() >= Config.MAX_ALLOWED_COMMANDSPAM_INFRACTION + 1) 

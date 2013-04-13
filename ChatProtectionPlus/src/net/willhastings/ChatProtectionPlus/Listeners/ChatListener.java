@@ -1,7 +1,7 @@
 package net.willhastings.ChatProtectionPlus.Listeners;
 
+import net.willhastings.ChatProtectionPlus.CPPFunction;
 import net.willhastings.ChatProtectionPlus.ChatProtectionPlus;
-import net.willhastings.ChatProtectionPlus.CustomFunction;
 import net.willhastings.ChatProtectionPlus.util.Config;
 import net.willhastings.ChatProtectionPlus.util.MessageHandler;
 import net.willhastings.ChatProtectionPlus.util.User;
@@ -32,20 +32,20 @@ public class ChatListener implements Listener
 		
 		if(!player.isOnline()) return;
 		
-		if(CustomFunction.isChatMuted())
+		if(CPPFunction.isChatMuted())
 		{
-			if(CustomFunction.hasPermission(player, "cpp.ignore.chatlock") || CustomFunction.hasPermission(player, "cpp.ignore.*")) return;
-			player.sendMessage(messageHandler.getMessage("server.chatlocked", true));
+			if(CPPFunction.hasPermission(player, "cpp.ignore.chatlock") || CPPFunction.hasPermission(player, "cpp.ignore.*")) return;
+			player.sendMessage(messageHandler.getMessage("server.chat.locked", true));
 			event.setCancelled(true);
 			return;
 		}
 		
 		String pMessage = event.getMessage();
-		User user = CustomFunction.getUser(player);
+		User user = CPPFunction.getUser(player);
 		
 		if(Config.USE_ANTICHAT_SPAM) 
 		{
-			if(CustomFunction.hasPermission(player, "cpp.ignore.chatspam") || CustomFunction.hasPermission(player, "cpp.ignore.*")) return;
+			if(CPPFunction.hasPermission(player, "cpp.ignore.chatspam") || CPPFunction.hasPermission(player, "cpp.ignore.*")) return;
 			Long currTime = System.currentTimeMillis();	
 			Long timeDif = (currTime - user.getPrevMessageTime());
 			
@@ -58,7 +58,7 @@ public class ChatListener implements Listener
 					
 					if(Config.NOTIFY_ADMIN) 
 					{
-						CustomFunction.NotifyAdministrators(messageHandler.getFormatedMessage("admin.spam.chat", true, player.getDisplayName(), timeDif));
+						CPPFunction.NotifyAdministrators(messageHandler.getFormatedMessage("admin.spam.chat", true, player.getDisplayName(), timeDif));
 					}
 				}
 				
@@ -103,9 +103,9 @@ public class ChatListener implements Listener
 		
 		if(Config.USE_ANTICAPS) 
 		{
-			if(CustomFunction.hasPermission(player, "cpp.ignore.anticaps") || CustomFunction.hasPermission(player, "cpp.ignore.*")) return;
+			if(CPPFunction.hasPermission(player, "cpp.ignore.anticaps") || CPPFunction.hasPermission(player, "cpp.ignore.*")) return;
 			if(pMessage.length() < 1) return;
-			double upperCaseCount = CustomFunction.capitalCount(pMessage);			
+			double upperCaseCount = CPPFunction.capitalCount(pMessage);			
 			if((upperCaseCount / pMessage.length()) * 100 > Config.ALLOWED_CAPITALS_PERCENT) 
 			{
 				if(Config.NOTIFY_USER) event.getPlayer().sendMessage(messageHandler.getMessage("user.caps", true));

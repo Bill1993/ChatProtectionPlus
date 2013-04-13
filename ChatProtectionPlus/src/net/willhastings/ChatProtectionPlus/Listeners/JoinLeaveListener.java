@@ -1,7 +1,7 @@
 package net.willhastings.ChatProtectionPlus.Listeners;
 
+import net.willhastings.ChatProtectionPlus.CPPFunction;
 import net.willhastings.ChatProtectionPlus.ChatProtectionPlus;
-import net.willhastings.ChatProtectionPlus.CustomFunction;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -21,19 +21,19 @@ public class JoinLeaveListener implements Listener
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerJoinEvent(PlayerJoinEvent event) 
 	{
-		CustomFunction.addUser(event.getPlayer());
+		CPPFunction.addUser(event.getPlayer());
 	}
 	
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerQuitEvent(PlayerQuitEvent event) 
 	{
-		CustomFunction.removeUser(event.getPlayer());
+		CPPFunction.removeUser(event.getPlayer());
 	}
 	
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerKickEvent(PlayerKickEvent event) 
 	{
-		CustomFunction.removeUser(event.getPlayer());
+		CPPFunction.removeUser(event.getPlayer());
 	}
 
 }

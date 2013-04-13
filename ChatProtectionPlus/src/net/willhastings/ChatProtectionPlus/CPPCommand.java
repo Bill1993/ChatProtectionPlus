@@ -29,7 +29,7 @@ public class CPPCommand implements CommandExecutor
 			return true;
 		}
 
-		if(!CustomFunction.hasPermission((Player) sender, "cpp.admin")) return false;
+		if(!CPPFunction.hasPermission((Player) sender, "cpp.admin")) return false;
 		
 		if(args.length == 0) 
 		{
@@ -65,21 +65,19 @@ public class CPPCommand implements CommandExecutor
 								if(i == 97)
 								{
 									Bukkit.broadcastMessage(ChatColor.DARK_RED + "|----------------------------------------------------|");
-									Bukkit.broadcastMessage(ChatColor.AQUA + "*** " + messageHandler.getMessage("server.prefix", false) + "Chat Cleared by " + ChatColor.YELLOW + sender.getName() 
-											+ ChatColor.WHITE +"!" + ChatColor.AQUA + " ***");
+									Bukkit.broadcastMessage(ChatColor.AQUA + "*** " + messageHandler.getFormatedMessage("server.chat.lock", true, sender.getName()) + ChatColor.AQUA + " ***");
 									Bukkit.broadcastMessage(ChatColor.DARK_RED + "|----------------------------------------------------|");
 								}
 							}		
 						}
 						else if(args[1].equalsIgnoreCase("lock")) 
 						{
-							CustomFunction.toggleChat();
-							if(CustomFunction.isChatMuted()) 
+							CPPFunction.toggleChat();
+							if(CPPFunction.isChatMuted()) 
 							{
 								sender.sendMessage(messageHandler.getMessage("server.prefix", false) + "The chat has now been locked!");
 								Bukkit.broadcastMessage(ChatColor.DARK_RED + "|----------------------------------------------------|");
-								Bukkit.broadcastMessage(ChatColor.AQUA + "*** " + messageHandler.getMessage("server.prefix", false) + "Chat Locked by " + ChatColor.YELLOW + sender.getName() 
-										+ ChatColor.WHITE +"!" + ChatColor.AQUA + " ***");
+								Bukkit.broadcastMessage(ChatColor.AQUA + "*** " + messageHandler.getFormatedMessage("server.chat.unlock", true, sender.getName()) + ChatColor.AQUA + " ***");
 								Bukkit.broadcastMessage(ChatColor.DARK_RED + "|----------------------------------------------------|");
 							}
 							else

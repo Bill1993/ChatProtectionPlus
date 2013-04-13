@@ -44,7 +44,7 @@ public class ChatProtectionPlus extends JavaPlugin
 		Player[] player = this.getServer().getOnlinePlayers();
 		for(Player i : player)
 		{
-			CustomFunction.addUser(i);
+			CPPFunction.addUser(i);
 		}
 		
 		setupPermissions(); 
