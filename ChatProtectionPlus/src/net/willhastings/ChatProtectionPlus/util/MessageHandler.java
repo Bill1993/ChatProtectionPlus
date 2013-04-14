@@ -43,10 +43,14 @@ public class MessageHandler
 		else if(defaults.containsKey(key))
 		{
 			temp = ChatColor.translateAlternateColorCodes('&', defaults.get(key));
+			plugin.getLogger().severe("Missing message <" + key + "> in messages.properties!");
+			plugin.getLogger().info("Default was found!");
 		}
 		else
 		{
 			temp = "Missing message <" + key + "> in messages.properties!";
+			plugin.getLogger().severe(temp);
+			prefix = true;
 		}
 		if(prefix) temp = this.getMessage("server.prefix", false) + " " + temp;
 		return temp;
@@ -64,10 +68,13 @@ public class MessageHandler
 		{
 			temp = ChatColor.translateAlternateColorCodes('&', defaults.get(key));
 			temp = MessageFormat.format(temp, params);
+			plugin.getLogger().severe("Missing message <" + key + "> in messages.properties!");
+			plugin.getLogger().info("Default was found!");
 		}
 		else
 		{
 			temp = "Missing message <" + key + "> in messages.properties!";
+			plugin.getLogger().severe(temp);
 			prefix = true;
 		}
 		if(prefix) temp = this.getMessage("server.prefix", false) + " " + temp;

@@ -34,6 +34,9 @@ public class ChatProtectionPlus extends JavaPlugin
 	{
 		plugin = this;
 		Config.loadConfig(this);
+		
+		if(this.getServer().getPluginManager().getPlugin("Vault") != null) setupPermissions();
+		
 		messageHandler = new MessageHandler(this);
 		
 		joinleavelistener = new JoinLeaveListener(this);
