@@ -18,7 +18,7 @@ import org.mcstats.MetricsLite;
 
 public class ChatProtectionPlus extends JavaPlugin
 {
-	Logger log = Logger.getLogger("Minecraft");
+	private static Logger log = Logger.getLogger("Minecraft");
 	
 	public static JoinLeaveListener joinleavelistener = null;
 	public static ChatListener chatlistener = null;
@@ -49,8 +49,6 @@ public class ChatProtectionPlus extends JavaPlugin
 		{
 			CPPFunction.addUser(i);
 		}
-		
-		setupPermissions(); 
 
 		try 
 		{
@@ -76,6 +74,7 @@ public class ChatProtectionPlus extends JavaPlugin
         if (permissionProvider != null) 
         {
             permission = permissionProvider.getProvider();
+            log.info("[ChatProtection+] is using [Vault] for permissions!");
         }
         return (permission != null);
     }

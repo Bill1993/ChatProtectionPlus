@@ -56,17 +56,8 @@ public class CPPFunction
 	public static boolean hasPermission(Player player, String perm)
 	{
 		if (player.isOp()) return true;	
-		else if(ChatProtectionPlus.permission != null) 
-		{
-			if (ChatProtectionPlus.permission.has(player, "*")) return true;
-			else if (ChatProtectionPlus.permission.has(player, perm)) return true;
-		}
-		else
-		{
-			if (player.hasPermission("*")) return true;
-			else if (player.hasPermission(perm)) return true;
-		}
-		return false;
+		else if(ChatProtectionPlus.permission != null) return (ChatProtectionPlus.permission.has(player, perm) || ChatProtectionPlus.permission.has(player, "*"));
+		else return (player.hasPermission(perm) || player.hasPermission("*"));
 	}
 	
 	public static void toggleChat() 

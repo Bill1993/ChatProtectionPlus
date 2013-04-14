@@ -10,6 +10,12 @@ commands:
     
 permissions:
   cpp.admin:
-    description: Makes user a ChatProtection+ Administrator
+    description: Access to /CPP command
+  cpp.admin.*:
+    description: Access to /CPP command, and all sub-commands
+  cpp.admin.reload:
+    description: Access to /CPP RELOAD sub-command
+  cpp.admin.chat:
+    description: Access to /CPP CHAT sub-command
   cpp.ignore:
     description: Will make ChatProtection+ ignore the user
