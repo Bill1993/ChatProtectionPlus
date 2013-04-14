@@ -1,17 +1,13 @@
 package net.willhastings.ChatProtectionPlus.util;
 
-import org.bukkit.entity.Player;
-
 public class User 
 {
 	String prevMessage;
 	int chatInfractions, commandInfractions;
 	Long prevMessageTime, prevCommandTime;
-	Player user;
 
-	public User(Player player)
+	public User()
 	{
-		user = player;
 		this.setPrevMessage("");
 		this.setChatInfractions(0);
 		this.setCommandInfractions(0);

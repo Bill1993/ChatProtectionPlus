@@ -28,7 +28,7 @@ public class CPPFunction
 	}	
 	public static void addUser(Player player)
 	{		
-		users.put(player, new User(player));
+		users.put(player, new User());
 	}	
 	
 	public static void removeUser(Player player)
