@@ -34,10 +34,12 @@ public class ChatListener implements Listener
 		
 		if(CPPFunction.isChatMuted())
 		{
-			if(CPPFunction.hasPermission(player, "cpp.ignore.chatlock") || CPPFunction.hasPermission(player, "cpp.ignore.*")) return;
-			player.sendMessage(messageHandler.getMessage("user.chat.locked", true));
-			event.setCancelled(true);
-			return;
+			if(CPPFunction.hasPermission(player, "cpp.ignore.chatlock") || CPPFunction.hasPermission(player, "cpp.ignore.*")) {}
+			else
+			{
+				player.sendMessage(messageHandler.getMessage("user.chat.locked", true));
+				event.setCancelled(true);
+			}
 		}
 		
 		String pMessage = event.getMessage();
