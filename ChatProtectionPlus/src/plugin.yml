@@ -17,5 +17,13 @@ permissions:
     description: Access to /CPP RELOAD sub-command
   cpp.admin.chat:
     description: Access to /CPP CHAT sub-command
-  cpp.ignore:
-    description: Will make ChatProtection+ ignore the user
+  cpp.ignore.*:
+    description: Will make ChatProtection+ ignore the user on all flags
+  cpp.ignore.chat.lock:
+    description: Will let the user bypass the chat lock
+  cpp.ignore.chat.spam:
+    description: Will let the user bypass the anti-spam feature
+  cpp.ignore.anticaps:
+    description: Will let the user bypass the maximum capital letters feature
+  cpp.ignore.command.spam:
+    description: Will let the user bypass the command-spam feature

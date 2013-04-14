@@ -34,7 +34,7 @@ public class ChatListener implements Listener
 		
 		if(CPPFunction.isChatMuted())
 		{
-			if(CPPFunction.hasPermission(player, "cpp.ignore.chatlock") || CPPFunction.hasPermission(player, "cpp.ignore.*")) {}
+			if(CPPFunction.hasPermission(player, "cpp.ignore.chat.lock") || CPPFunction.hasPermission(player, "cpp.ignore.*")) {}
 			else
 			{
 				player.sendMessage(messageHandler.getMessage("user.chat.locked", true));
@@ -47,7 +47,7 @@ public class ChatListener implements Listener
 		
 		if(Config.USE_ANTICHAT_SPAM) 
 		{
-			if(CPPFunction.hasPermission(player, "cpp.ignore.chatspam") || CPPFunction.hasPermission(player, "cpp.ignore.*")) return;
+			if(CPPFunction.hasPermission(player, "cpp.ignore.chat.spam") || CPPFunction.hasPermission(player, "cpp.ignore.*")) return;
 			Long currTime = System.currentTimeMillis();	
 			Long timeDif = (currTime - user.getPrevMessageTime());
 			

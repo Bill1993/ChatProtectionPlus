@@ -30,7 +30,7 @@ public class CommandListener implements Listener
 		if(event.isCancelled()) return;
 		
 		if(!Config.USE_ANTICAPS && !Config.USE_ANTICHAT_SPAM) return;
-		else if(CPPFunction.hasPermission(player, "cpp.ignore.commandspam") || CPPFunction.hasPermission(player, "cpp.ignore.*")) return;
+		else if(CPPFunction.hasPermission(player, "cpp.ignore.command.spam") || CPPFunction.hasPermission(player, "cpp.ignore.*")) return;
 		
 		if(!player.isOnline()) return;
 		
