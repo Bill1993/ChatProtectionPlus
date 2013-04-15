@@ -33,15 +33,24 @@ public class ChatProtectionPlus extends JavaPlugin
 	public void onEnable() 
 	{
 		plugin = this;
+		
+		log.info("[ChatProtection+] Loading configuration file!");
 		Config.loadConfig(this);
 		
 		if(this.getServer().getPluginManager().getPlugin("Vault") != null) setupPermissions();
+		else log.info("[ChatProtection+] is using Bukkit perm instead of [Vault]");
 		
+		log.info("[ChatProtection+] Loading messages from messages.properties file!");
 		messageHandler = new MessageHandler(this);
 		
+		log.info("[ChatProtection+] Loading listeners...");
 		joinleavelistener = new JoinLeaveListener(this);
+		log.info("[ChatProtection+] Player Join/Leave Listener loaded!");
 		chatlistener = new ChatListener(this);
+		log.info("[ChatProtection+] Chat Listener loaded!");
 		commandlistener = new CommandListener(this);
+		log.info("[ChatProtection+] Command Listener loaded!");
+		
 		getCommand("cpp").setExecutor(new CPPCommand(this));
 		
 		Player[] player = this.getServer().getOnlinePlayers();
@@ -50,6 +59,7 @@ public class ChatProtectionPlus extends JavaPlugin
 			CPPFunction.addUser(i);
 		}
 
+		log.info("[ChatProtection+] Attempting to send statis to MCStats!");
 		try 
 		{
 		    MetricsLite metrics = new MetricsLite(this);
@@ -57,7 +67,7 @@ public class ChatProtectionPlus extends JavaPlugin
 		} 
 		catch (IOException e) 
 		{
-		    // Failed to load metrics
+			log.info("[ChatProtection+] Failed to send stats to MCStats, stats will not be send >:C " + e.toString());
 		}
 		
 		log.info("[ChatProtection+] is now Loaded!");
