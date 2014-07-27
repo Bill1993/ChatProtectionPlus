@@ -2,21 +2,23 @@ name: ChatProtectionPlus
 main: net.willhastings.ChatProtectionPlus.ChatProtectionPlus
 version: 1.0.1
 softdepend: [Vault]
-author: bill1993
+author: [bill1993]
+
+
 
 commands:
   cpp:
-    description: ChatProtection+ Command, and Sub Commands
+    description: ChatProtection+ protect your server against spamming and much more!
     
 permissions:
   cpp.admin:
-    description: Access to /CPP command
+    description: Access to the command /CPP
   cpp.admin.*:
-    description: Access to /CPP command, and all sub-commands
+    description: Access to all /CPP commands, and all sub-commands
   cpp.admin.reload:
-    description: Access to /CPP RELOAD sub-command
+    description: Access to /CPP RELOAD
   cpp.admin.chat:
-    description: Access to /CPP CHAT sub-command
+    description: Access to /CPP CHAT
   cpp.ignore.*:
     description: Will make ChatProtection+ ignore the user on all flags
   cpp.ignore.chat.lock:
