@@ -7,21 +7,25 @@
 # NotifyAdmin - Will notify administrators when a user triggers a flag in the plugin.
 #
 Options:
-  NotifyUser: true
+  NotifyUser: false
   NotifyAdmin: true
 #
 #|-----------------------------------------------------------|
 #|-------------Toggle Features on and off.-------------------|
 #|-----------------------------------------------------------|
 #
-# AntiCaps - Turn the Anti Capital letters in chat feature off.
-# AntiChatSpam - Turn the Anti Chat Spam on and off.
-# AntiCommandSpam - Turn the Anti Command Spam on and off.
+#
+#    AntiCaps will require a percentage of text to lowercase.  By default, 49% must be lowercased.
+#    AntiChatSpam will limit the amount of messages, requiring a waiting period (by default, 451ms).
+#    AntiCommandSpam will limit the amount of commands performed, requiring a waiting period (by default, 451ms).
 #
 Toggle:
   AntiCaps: true
   AntiChatSpam: true
   AntiCommandSpam: true
+ 
+
+ 
 #
 #|-----------------------------------------------------------|
 #|-------Configuration are for the anti-caps system.---------|
@@ -42,18 +46,18 @@ AntiCaps:
 #
 AntiChatSpam:
   BanForSpam: false
-  MillisecondsAllowedBetweenMessages: 450
+  MillisecondsAllowedBetweenMessages: 451
   AllowedSpamInfractions: 3
 #
 #|-----------------------------------------------------------|
 #|---------Configuration are for the anti-chat spam.---------|
 #|-----------------------------------------------------------|
 #
-# BanForSpam - Will ban the user for spamming commands. if false, it will kick the user.
+# BanForSpam - Will ban the user for spamming commands. if false, it will kick the user.  ==  Recommended to be turned off.
 # MillisecondsAllowedBetweenCommands - This is the maximum amount of miliseconds allowed between user commands.
 # AllowedSpamInfractions - The amount of infractions a user is allowed to have before they are kicked/banned for spamming commands.
 #
 AntiCommandSpam:
   BanForSpam: false
-  MillisecondsAllowedBetweenCommands: 450
+  MillisecondsAllowedBetweenCommands: 451
   AllowedSpamInfractions: 3
