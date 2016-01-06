@@ -1,9 +1,7 @@
 package net.willhastings.ChatProtectionPlus;
 
 import java.util.HashMap;
-
 import net.willhastings.ChatProtectionPlus.util.User;
-
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
