@@ -5,7 +5,6 @@ import net.willhastings.ChatProtectionPlus.ChatProtectionPlus;
 import net.willhastings.ChatProtectionPlus.util.Config;
 import net.willhastings.ChatProtectionPlus.util.MessageHandler;
 import net.willhastings.ChatProtectionPlus.util.User;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
