@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.text.MessageFormat;
 import java.util.HashMap;
-
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 

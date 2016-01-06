@@ -1,8 +1,8 @@
-name: ChatProtectionPlus
+name: ChatProtection+
 main: net.willhastings.ChatProtectionPlus.ChatProtectionPlus
-version: 1.0.1
+version: 2.0.0
 softdepend: [Vault]
-author: [bill1993]
+author: [bill1993, DUFC_Liam]
 
 
 
