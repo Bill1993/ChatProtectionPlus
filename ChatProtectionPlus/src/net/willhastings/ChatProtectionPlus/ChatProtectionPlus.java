@@ -70,12 +70,12 @@ public class ChatProtectionPlus extends JavaPlugin
 			log.info("[ChatProtection+] Failed to send stats to MCStats, stats will not be send >:C " + e.toString());
 		}
 		
-		log.info("[ChatProtection+] is now Loaded!");
+		log.info("[ChatProtection+] is now Enabled!");
 	}
 	
 	public void onDisable()  
 	{
-		log.info("[ChatProtection+] is now Un-Loaded!");
+		log.info("[ChatProtection+] is now Disabled!");
 	}
 	
 	public static boolean setupPermissions()
@@ -84,7 +84,7 @@ public class ChatProtectionPlus extends JavaPlugin
         if (permissionProvider != null) 
         {
             permission = permissionProvider.getProvider();
-            log.info("[ChatProtection+] is using [Vault] for permissions!");
+            log.info("[ChatProtection+] is using [Vault] for permissions it is required!");
         }
         return (permission != null);
     }
